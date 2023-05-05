@@ -10,4 +10,4 @@ circuit_list = [
 for circuit_name in circuit_list:
     circuit = maxpy.AxCircuit(top_name=circuit_name)
     circuit.set_synth_tool("yosys")
-    circuit.rtl2py(target="none")
+    circuit.rtl2py()
