@@ -17,10 +17,14 @@ def testbench_run(ckt=None, results_filename=None):
 
 if __name__ == "__main__":
     mod_list = [
-        "LOBA0_16_4_none.LOBA0_16_4",
-        "LOBA1_16_4_none.LOBA1_16_4",
-        "LOBA2_16_4_none.LOBA2_16_4",
-        "LOBA3_16_4_none.LOBA3_16_4",
+        #"LOBA0.LOBA0",
+        #"LOBA1.LOBA1",
+        #"LOBA2.LOBA2",
+        #"LOBA3.LOBA3",
+        "LOBA0_yosys.LOBA0",
+        # "LOBA1_yosys.LOBA1",
+        # "LOBA2_yosys.LOBA2",
+        # "LOBA3_yosys.LOBA3",
         ]
     for mod_name in mod_list:
         mod = importlib.import_module(mod_name)
