@@ -1,3 +1,5 @@
+`include "LEADING_ONE_BIT.v"
+
 module LOBA_SPLIT #(parameter N=16, parameter K=4)
     (X, Xh, Xl, kh, kl);
 
@@ -12,8 +14,8 @@ module LOBA_SPLIT #(parameter N=16, parameter K=4)
     reg [N-1:0] lower;
     genvar i;
 
-    LOBD lobd1 (.in_a(X), .out_a(lobh));
-    LOBD lobd2 (.in_a(lower), .out_a(lobl));
+    LEADING_ONE_BIT lob1 (.in_a(X), .out_a(lobh));
+    LEADING_ONE_BIT lob2 (.in_a(lower), .out_a(lobl));
 
     generate
         for (i=N-1; i>K; i=i-1) begin

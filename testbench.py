@@ -17,11 +17,11 @@ def testbench_run(ckt=None, results_filename=None):
 
 if __name__ == "__main__":
     mod_list = [
-        #"LOBA0.LOBA0",
-        #"LOBA1.LOBA1",
-        #"LOBA2.LOBA2",
-        #"LOBA3.LOBA3",
-        "LOBA0_yosys.LOBA0",
+        "LOBA0.LOBA0",
+        "LOBA1.LOBA1",
+        "LOBA2.LOBA2",
+        "LOBA3.LOBA3",
+        #"LOBA0_yosys.LOBA0",
         # "LOBA1_yosys.LOBA1",
         # "LOBA2_yosys.LOBA2",
         # "LOBA3_yosys.LOBA3",

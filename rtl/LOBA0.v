@@ -1,6 +1,4 @@
 `include "LOBA_SPLIT.v"
-`include "LOBD.v"
-`include "SSG.v"
 
 module LOBA0 #(parameter N=16, parameter K=4) (A, B, P);
 
@@ -18,13 +16,9 @@ module LOBA0 #(parameter N=16, parameter K=4) (A, B, P);
     wire [$clog2(N)-1:0] k1b;
     wire [$clog2(N)-1:0] k2b;
 
-    wire [$clog2(2*N)-1:0] shift_count_0;
-
     LOBA_SPLIT #(.N(N), .K(K)) split_a (.X(A), .Xh(Ah), .kh(k1a), .Xl(Al), .kl(k2a));
     LOBA_SPLIT #(.N(N), .K(K)) split_b (.X(B), .Xh(Bh), .kh(k1b), .Xl(Bl), .kl(k2b));
-    SSG #(.K(K)) ssg0 (.k1(k1a), .k2(k1b), .shift(shift_count_0));
 
-    assign P =
-        ((Ah * Bh) << shift_count_0);
+    assign P = ((Ah*Bh)<<(k1a+k1b-6));
 
 endmodule

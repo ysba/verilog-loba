@@ -1,4 +1,4 @@
-module LOBD #(parameter N=16) (in_a, out_a);
+module LEADING_ONE_BIT #(parameter N=16) (in_a, out_a);
     input [N-1:0] in_a;
     output reg [N-1:0] out_a;
     integer k;
